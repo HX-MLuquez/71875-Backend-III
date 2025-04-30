@@ -1,3 +1,63 @@
+# API REST con Express y JSON
+
+## Separar la lógica de tu API en módulos
+
+Tenemos una ruta `GET /books` que lee libros desde `db/books.json`. Y vamos a separar en:
+- **routes**
+- **controllers**
+- **services**
+- **managers**
+
+---
+
+### 1. **Route (routes/book.router.js)**
+
+Aquí definimos **la ruta** y le asignamos **qué controller** manejará la lógica.
+
+```javascript
+import { getBooksController } from '../controllers/book.controller.js';
+import { Router } from 'express';
+
+const router = Router();
+
+router.get('/books', getBooksController);
+
+export default router;
+```
+
+---
+
+### 2. **Controller (controllers/book.controller.js)**
+
+El controller recibe el request, llama al **service**, y responde.
+
+```javascript
+import { getBooksService } from '../services/book.service.js';
+
+export const getBooksController = async (req, res) => {
+  try {
+    const books = await getBooksService();
+    res.json({ status: 'success', payload: books });
+  } catch (error) {
+    res.status(500).json({ status: 'error', message: error.message });
+  }
+};
+```
+
+---
+
+### 3. **Service (services/book.service.js)**
+
+El service es el que **pide la información al manager**. Y aquí aplicar **Reglas de negocio** de ser necesario.
+
+```javascript
+import { getBooksManager } from '../managers/book.manager.js';
+
+export const getBooksService = async () => {
+  const books = await getBooksManager();
+  return books;
+};
+```
 
 ---
 
