@@ -1,3 +1,5 @@
+- **06/05/2025 (martes):**  
+#  **Clase 1 -** Testing Mocks
 # TDD + Mocks
 
 ## TDD (Test Driven Development)
