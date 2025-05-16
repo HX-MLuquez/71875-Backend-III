@@ -12,6 +12,8 @@ router.get("/", (req, res) => {
   let characters;
   try {
     characters = charactersManager.getCharacters();
+
+    //* Manera en usar nuestro Middelware logger que creamos en /config/logger.js
     req.logger.info(`Se recibieron ${characters.length} personajes`);
     res.status(200).json({ characters });
   } catch (error) {

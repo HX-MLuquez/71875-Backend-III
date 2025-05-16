@@ -21,6 +21,8 @@ app.set("views", path.join(__dirname, "/views"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//* Inyectamos nuestro Middelware middLogg para tener nuestros logger
 app.use(middLogg);
 app.use("/public", express.static(path.join(__dirname, "/public")));
 

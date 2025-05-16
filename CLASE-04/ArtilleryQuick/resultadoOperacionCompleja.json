@@ -1,0 +1,177 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 20,
+      "vusers.created": 20,
+      "http.requests": 24,
+      "http.codes.200": 4,
+      "http.responses": 4,
+      "http.downloaded_bytes": 356,
+      "plugins.metrics-by-endpoint./engineering/structural-analysis.codes.200": 4,
+      "plugins.metrics-by-endpoint./engineering/structural-analysis.errors.ETIMEDOUT": 20,
+      "errors.ETIMEDOUT": 20,
+      "vusers.failed": 20
+    },
+    "rates": {
+      "http.request_rate": 2
+    },
+    "firstCounterAt": 1747351670209,
+    "firstHistogramAt": 1747351672814,
+    "lastCounterAt": 1747351689823,
+    "lastHistogramAt": 1747351679807,
+    "firstMetricAt": 1747351670209,
+    "lastMetricAt": 1747351689823,
+    "period": 1747351680000,
+    "summaries": {
+      "http.response_time": {
+        "min": 2570,
+        "max": 9447,
+        "count": 4,
+        "mean": 6055,
+        "p50": 4965.3,
+        "median": 4965.3,
+        "p75": 7117,
+        "p90": 7117,
+        "p95": 7117,
+        "p99": 7117,
+        "p999": 7117
+      },
+      "plugins.metrics-by-endpoint.response_time./engineering/structural-analysis": {
+        "min": 2570,
+        "max": 9447,
+        "count": 4,
+        "mean": 6055,
+        "p50": 4965.3,
+        "median": 4965.3,
+        "p75": 7117,
+        "p90": 7117,
+        "p95": 7117,
+        "p99": 7117,
+        "p999": 7117
+      }
+    },
+    "histograms": {
+      "http.response_time": {
+        "min": 2570,
+        "max": 9447,
+        "count": 4,
+        "mean": 6055,
+        "p50": 4965.3,
+        "median": 4965.3,
+        "p75": 7117,
+        "p90": 7117,
+        "p95": 7117,
+        "p99": 7117,
+        "p999": 7117
+      },
+      "plugins.metrics-by-endpoint.response_time./engineering/structural-analysis": {
+        "min": 2570,
+        "max": 9447,
+        "count": 4,
+        "mean": 6055,
+        "p50": 4965.3,
+        "median": 4965.3,
+        "p75": 7117,
+        "p90": 7117,
+        "p95": 7117,
+        "p99": 7117,
+        "p999": 7117
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "http.requests": 24,
+        "http.codes.200": 4,
+        "http.responses": 4,
+        "http.downloaded_bytes": 356,
+        "plugins.metrics-by-endpoint./engineering/structural-analysis.codes.200": 4
+      },
+      "rates": {
+        "http.request_rate": 3
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1747351670209,
+      "firstHistogramAt": 1747351672814,
+      "lastCounterAt": 1747351679808,
+      "lastHistogramAt": 1747351679807,
+      "firstMetricAt": 1747351670209,
+      "lastMetricAt": 1747351679808,
+      "period": "1747351670000",
+      "summaries": {
+        "http.response_time": {
+          "min": 2570,
+          "max": 9447,
+          "count": 4,
+          "mean": 6055,
+          "p50": 4965.3,
+          "median": 4965.3,
+          "p75": 7117,
+          "p90": 7117,
+          "p95": 7117,
+          "p99": 7117,
+          "p999": 7117
+        },
+        "plugins.metrics-by-endpoint.response_time./engineering/structural-analysis": {
+          "min": 2570,
+          "max": 9447,
+          "count": 4,
+          "mean": 6055,
+          "p50": 4965.3,
+          "median": 4965.3,
+          "p75": 7117,
+          "p90": 7117,
+          "p95": 7117,
+          "p99": 7117,
+          "p999": 7117
+        }
+      },
+      "histograms": {
+        "http.response_time": {
+          "min": 2570,
+          "max": 9447,
+          "count": 4,
+          "mean": 6055,
+          "p50": 4965.3,
+          "median": 4965.3,
+          "p75": 7117,
+          "p90": 7117,
+          "p95": 7117,
+          "p99": 7117,
+          "p999": 7117
+        },
+        "plugins.metrics-by-endpoint.response_time./engineering/structural-analysis": {
+          "min": 2570,
+          "max": 9447,
+          "count": 4,
+          "mean": 6055,
+          "p50": 4965.3,
+          "median": 4965.3,
+          "p75": 7117,
+          "p90": 7117,
+          "p95": 7117,
+          "p99": 7117,
+          "p999": 7117
+        }
+      }
+    },
+    {
+      "counters": {
+        "plugins.metrics-by-endpoint./engineering/structural-analysis.errors.ETIMEDOUT": 20,
+        "errors.ETIMEDOUT": 20,
+        "vusers.failed": 20
+      },
+      "rates": {},
+      "firstCounterAt": 1747351680422,
+      "lastCounterAt": 1747351689823,
+      "firstMetricAt": 1747351680422,
+      "lastMetricAt": 1747351689823,
+      "period": "1747351680000",
+      "summaries": {},
+      "histograms": {}
+    }
+  ]
+}

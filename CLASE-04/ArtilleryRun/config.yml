@@ -36,3 +36,17 @@ scenarios:
           json:
             email: "{{email}}"
             password: "{{password}}"
+
+
+# ```bash
+# config:
+#   plugins:
+#     metrics-by-endpoint: {}
+#   target: 'http://localhost:3000'
+#   phases:
+#     - duration: 20     <--- es el tiempo en que se ejecutan las pruebas con el FLOW
+#       arrivalRate: 5   <--- 5 peticiones por segundo
+#       el total es 100 veces cada FLOW
+# Nuestro FLOW de ejemplo ejecuta 3 peticiones -> el número final de peticiones 
+# según nuestro config.yml es de 300 peticiones
+# ```

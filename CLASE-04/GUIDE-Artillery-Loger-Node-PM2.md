@@ -101,6 +101,19 @@ artillery report resultadoOperacionCompleja.json -o informeOperacionCompleja.htm
 ```
 
 ### Ejecutar una prueba rápida con nuestro ArtilleryRun
+```bash
+config:
+  plugins:
+    metrics-by-endpoint: {}
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 20     <--- es el tiempo en que se ejecutan las pruebas con el FLOW
+      arrivalRate: 5   <--- 5 peticiones por segundo
+      el total es 100 veces cada FLOW
+Nuestro FLOW de ejemplo ejecuta 3 peticiones -> el número final de peticiones 
+según nuestro config.yml es de 300 peticiones
+```
+
 Ejemplo de carga:
 ```bash
 artillery run config.yml --output resultadoRegisterLoginFlow.json
@@ -225,3 +238,5 @@ app.listen(3000, () => {
 * Usa PM2 para mantener tus servicios Node.js en producción corriendo de forma confiable.
 
 ---
+
+
