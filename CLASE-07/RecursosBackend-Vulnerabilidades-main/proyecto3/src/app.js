@@ -9,7 +9,9 @@ import mongoose from 'mongoose';
 import config from './config/config.js';
 
 const app = express();
-const connection = mongoose.connect(config.mongo.URL)
+
+//! Atrapar error de conection - .catch
+const connection = mongoose.connect(config.mongo.URL).then(()=>{}).catch(()=>{})
 
 app.engine('handlebars',handlebars.engine());
 app.set('views',`${__dirname}/views`);

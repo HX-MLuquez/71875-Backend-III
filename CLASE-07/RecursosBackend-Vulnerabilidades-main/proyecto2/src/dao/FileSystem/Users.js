@@ -9,6 +9,8 @@ export default class Users {
     init = async() => {
         if(!fs.existsSync(this.path)) await fs.promises.writeFile(this.path,JSON.stringify([]));
     }
+
+    //! Implementar Proyecciones
     getUsers = async () =>{
         const data = await fs.promises.readFile(this.path,'utf-8');
         const users = JSON.parse(data);

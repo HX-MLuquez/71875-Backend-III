@@ -1,7 +1,10 @@
 import Users from "../dao/Mongo/Users.js"
 import { createHash } from "../utils.js";
-
+//! Importa inecesariamente un módulo
 const userService = new Users();
+
+//! Manejo de errores - Validaciones - (filtrar la data a enviar)
+//! Proteger datos sensibles
 
 const getUsers = async(req,res) =>{
     const result = await userService.getUsers();

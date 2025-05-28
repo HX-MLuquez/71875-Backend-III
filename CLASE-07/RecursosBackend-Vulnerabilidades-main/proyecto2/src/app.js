@@ -8,6 +8,8 @@ import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 
 const app = express();
+
+//! Conecta con nada - de conectar usar var .env
 const connection = mongoose.connect('URL de mongo')
 app.engine('handlebars',handlebars.engine());
 app.set('views',`${__dirname}/views`);
@@ -22,4 +24,5 @@ app.use('/',viewsRouter);
 app.use('/api/sessions',sessionsRouter);
 app.use('/api/users',usersRouter);
 
+//! Falta variables de entorno
 app.listen(8080,()=>console.log(`Listening on PORT 8080`))
