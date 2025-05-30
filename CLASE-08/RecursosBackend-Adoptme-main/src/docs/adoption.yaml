@@ -1,0 +1,6 @@
+paths:
+  /api/adoptions/:
+    get:
+      summary: Nananana
+      tags:
+        - Adoptions

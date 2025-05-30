@@ -1,0 +1,6 @@
+paths:
+  /api/sessions/:
+    get:
+      summary: nanana
+      tags:
+        - Sessions
