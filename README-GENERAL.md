@@ -97,7 +97,11 @@ https://github.com/HX-MLuquez/71875-Backend-III.git
 
 ## 🏁 Proyecto Final
 
-- **Entrega:** Luego de la última clase (fecha confirmada en cursada)
+- **Pre-Entrega:** desde la clase 6 '22/05/2025' (plazo 7 días) - Cierre '29/05/2025'
+  - Plazo de corrección es de 5 días hábiles
+
+- **Entrega Final:** Luego de la última clase (fecha confirmada en cursada)
+  - Plazo de los alumnos de 10 días corridos, y luego los profesores 20 días corridos (a partir del día de la entrega de cada uno)
 - **Modalidad:** Proyecto
 
 ---

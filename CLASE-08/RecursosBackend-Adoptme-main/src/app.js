@@ -47,14 +47,79 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ["./src/docs/*.yaml"],
+  // apis: ["./src/docs/*.yaml"],
+
+  //* Indicamos que vamos a implementar swagger en línea
+  apis: ['./src/**/*.js'], // o apis: ['./src/*.js'],  apis: ['./src/routes/**/*.js']
 };
+
+//! REPASO - e implementar swagger en línea
 
 //* 4. Implementamos swagger 
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use("/api/users", usersRouter);
+/**
+ * @swagger
+ *   /api/users/:
+ *     get:
+ *       summary: Obtiene todos los usuarios disponibles en la aplicación.
+ *       tags:
+ *         - UsersDocInLinea
+ *       responses:
+ *         "200":
+ *           description: La operación fue exitosa, se retorna un arreglo de los usuarios.
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: array
+ *                 items:
+ *                   $ref: '#/components/schemas/UserDocInLine'
+ *         "500":
+ *           description: Error inesperado en el servidor, no se pudo manejar el proceso.
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     UserDocInLine:
+ *       type: object
+ *       properties:
+ *         _id:
+ *           type: string
+ *           description: ID autogenerado de MongoDB.
+ *           example: "657872b1244ab4694ca2e659"
+ *         first_name:
+ *           type: string
+ *           description: Nombre del usuario.
+ *           example: Pepe
+ *         last_name:
+ *           type: string
+ *           description: Apellido del usuario.
+ *           example: Lopez
+ *         email:
+ *           type: string
+ *           description: Email del usuario.
+ *           example: pepe@gmail.com
+ *         password:
+ *           type: string
+ *           description: Contraseña del usuario (encriptada).
+ *           example: $2398498$23749029409
+ *         role:
+ *           type: string
+ *           description: Rol del usuario.
+ *           example: admin
+ *         pets:
+ *           type: array
+ *           description: Arreglo de mascotas del usuario.
+ *           items:
+ *             type: string
+ *           example: ["gato"]
+ */
+
+
 app.use("/api/pets", petsRouter);
 app.use("/api/adoptions", adoptionsRouter);
 app.use("/api/sessions", sessionsRouter);
