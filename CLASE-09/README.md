@@ -104,3 +104,11 @@ Para ilustrar cómo se puede implementar BDD con Mocha y Chai, consideremos un e
 | Documentación    | Las pruebas pueden servir como documentación, pero no son legibles por no desarrolladores.         | Las pruebas actúan como documentación viva del sistema, describiendo cómo debería comportarse en diferentes situaciones. |
 
 ---
+
+
+npm install --save-dev mocha chai
+
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.5.0"
+  }

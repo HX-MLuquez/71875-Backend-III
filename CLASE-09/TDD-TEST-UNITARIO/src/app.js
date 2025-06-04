@@ -17,7 +17,13 @@ const { PORT_SERVER, MONGO_URI } = process.env;
 
 const app = express();
 const PORT = PORT_SERVER || 8080;
-const connection = mongoose.connect(MONGO_URI);
+
+const connection = mongoose
+  .connect(MONGO_URI)
+  .then(() => {
+    console.log("Conectados a nuestra DB");
+  })
+  .catch(() => {});
 
 app.use(express.json());
 app.use(cookieParser());
@@ -84,7 +90,7 @@ app.get("/api/seed", async (req, res) => {
 
     // 4. Actualizar usuarios con sus mascotas
     const petMap = {};
-    pets.forEach(pet => {
+    pets.forEach((pet) => {
       const ownerId = pet.owner.toString();
       if (!petMap[ownerId]) petMap[ownerId] = [];
       petMap[ownerId].push({ _id: pet._id });
@@ -92,7 +98,7 @@ app.get("/api/seed", async (req, res) => {
 
     // Actualizar solo cada usuario con sus propias mascotas
     await Promise.all(
-      users.map(user =>
+      users.map((user) =>
         userModel.updateOne(
           { _id: user._id },
           { $set: { pets: petMap[user._id.toString()] || [] } }
@@ -100,7 +106,9 @@ app.get("/api/seed", async (req, res) => {
       )
     );
 
-    res.status(201).json({ message: "Seed completado", users, pets, adoptions });
+    res
+      .status(201)
+      .json({ message: "Seed completado", users, pets, adoptions });
   } catch (error) {
     console.error("Error al hacer seed:", error);
     res.status(500).json({ error: "Error al hacer seed" });

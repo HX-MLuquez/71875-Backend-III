@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha ./src/test/**/*.test.js --exit"
+    "test": "mocha ./test/**/*.test.js --exit"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "chai": "^5.2.0",
-    "mocha": "^11.5.0"
+    "mocha": "^11.5.0",
+    "moment": "^2.30.1"
   }
 }
