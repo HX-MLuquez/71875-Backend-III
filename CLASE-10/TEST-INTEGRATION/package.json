@@ -9,7 +9,7 @@
     "dev": "nodemon src/app.js",
     "test": "mocha ./test/**/*.test.js --exit",
     "test:users": "mocha ./test/user.session.test.js",
-    "test:pets": "mocha ./test/supertest.test.js",
+    "test:pets": "mocha ./test/pets.test.js",
     "test:petsimg": "mocha ./test/pets.image.test.js"
   },
   "keywords": [],
