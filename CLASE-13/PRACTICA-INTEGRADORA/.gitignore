@@ -1,0 +1,10 @@
+node_modules
+/test
+
+/dist
+/.env
+/.env.local
+/.env.dev
+/.env.prod
+
+

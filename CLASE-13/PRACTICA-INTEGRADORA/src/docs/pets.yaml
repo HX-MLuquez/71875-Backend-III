@@ -1,0 +1,189 @@
+paths:
+  /api/pets:
+    get:
+      summary: Obtener todas las mascotas
+      tags:
+        - Pets
+      responses:
+        "200":
+          description: Lista de todas las mascotas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  payload:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pet'
+
+    post:
+      summary: Crear una nueva mascota
+      tags:
+        - Pets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPet'
+      responses:
+        "200":
+          description: Mascota creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponsePet'
+        "400":
+          description: Valores incompletos
+
+  /api/pets/withimage:
+    post:
+      summary: Crear una mascota con imagen
+      tags:
+        - Pets
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+                - specie
+                - birthDate
+                - image
+              properties:
+                name:
+                  type: string
+                  example: Firulais
+                specie:
+                  type: string
+                  example: Perro
+                birthDate:
+                  type: string
+                  format: date
+                  example: 2020-05-01
+                image:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Mascota creada con imagen
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponsePet'
+        "400":
+          description: Valores incompletos
+
+  /api/pets/{pid}:
+    put:
+      summary: Actualizar una mascota
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID de la mascota a actualizar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPet'
+      responses:
+        "200":
+          description: Mascota actualizada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: pet updated
+
+    delete:
+      summary: Eliminar una mascota
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: pid
+          required: true
+          schema:
+            type: string
+          description: ID de la mascota a eliminar
+      responses:
+        "200":
+          description: Mascota eliminada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: pet deleted
+
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 60f7c0b0a3f2b0a1dcd4f2c1
+        name:
+          type: string
+          example: Luna
+        specie:
+          type: string
+          example: Gato
+        birthDate:
+          type: string
+          format: date
+          example: 2021-04-15
+        image:
+          type: string
+          example: /public/img/luna.jpg
+
+    NewPet:
+      type: object
+      required:
+        - name
+        - specie
+        - birthDate
+      properties:
+        name:
+          type: string
+          example: Coco
+        specie:
+          type: string
+          example: Conejo
+        birthDate:
+          type: string
+          format: date
+          example: 2022-03-10
+
+    ResponsePet:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        payload:
+          $ref: '#/components/schemas/Pet'
