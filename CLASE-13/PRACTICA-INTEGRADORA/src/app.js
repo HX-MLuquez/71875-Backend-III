@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(logger); //* morgan
 //*---------------------------------------------------------------
-app.use(cors);
+app.use(cors); 
 app.use(middLogg);
 
 //*----------------------------------------------------
